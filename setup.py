@@ -11,7 +11,8 @@ setup(
     include_package_data=True,
     install_requires=["django==4.2",
                       "djangorestframework==3.14.0",
-                      "requests==2.28.2"],
+                      "requests==2.28.2",
+                      "django-redis==5.2.0"],
     python_requires=">=3.10",
     zip_safe=False
 )
