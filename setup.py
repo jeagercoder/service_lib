@@ -9,7 +9,9 @@ setup(
     author='jeager',
     packages=find_packages(exclude=['tests*']),
     include_package_data=True,
-    install_requires=["django==4.2", "djangorestframework==3.14.0"],
+    install_requires=["django==4.2",
+                      "djangorestframework==3.14.0",
+                      "requests==2.28.2"],
     python_requires=">=3.10",
     zip_safe=False
 )
