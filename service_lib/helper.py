@@ -26,6 +26,10 @@ class Helper:
         kwargs = {'json': json, 'params': params, 'headers': self.get_headers()}
         return self.__request_with_json_response(method='post', url=self.get_url(), **kwargs)
 
+    def get_json(self, params=None):
+        kwargs = {'params': params, 'headers': self.get_headers()}
+        return self.__request_with_json_response(method='get', url=self.get_url(), **kwargs)
+
 
 class NotificationHelper(Helper):
 
@@ -34,3 +38,12 @@ class NotificationHelper(Helper):
 
     def get_url(self):
         return urljoin(settings.NOTIFICATION_SERVICE_URL, self.route)
+
+
+class AuthHelper(Helper):
+
+    def get_headers(self):
+        return {'Proxy-Authorization': settings.AUTH_SERVICE_AUTH}
+
+    def get_url(self):
+        return urljoin(settings.AUTH_SERVICE_URL, self.route)
