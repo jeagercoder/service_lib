@@ -14,3 +14,7 @@ def login(uuid, username, email):
                         'username': username,
                         'email': email}, settings.SESSION_EXPIRED)
     return session.split('_')[0]
+
+
+def logout(session):
+    return cache.delete(session)
