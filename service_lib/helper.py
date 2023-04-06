@@ -34,7 +34,7 @@ class Helper:
 class NotificationHelper(Helper):
 
     def get_headers(self):
-        return {'Proxy-Authorization': settings.NOTIFICATION_SERVICE_AUTH}
+        return {'Authorization': settings.NOTIFICATION_SERVICE_AUTH}
 
     def get_url(self):
         return urljoin(settings.NOTIFICATION_SERVICE_URL, self.route)
@@ -43,7 +43,7 @@ class NotificationHelper(Helper):
 class AuthHelper(Helper):
 
     def get_headers(self):
-        return {'Proxy-Authorization': settings.AUTH_SERVICE_AUTH}
+        return {'Authorization': settings.AUTH_SERVICE_AUTH}
 
     def get_url(self):
         return urljoin(settings.AUTH_SERVICE_URL, self.route)
