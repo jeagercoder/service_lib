@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='service_lib',
-    version='0.0.2',
+    version='0.0.3',
     license='BSD',
     description='Library dependency microservice.',
     long_description_content_type='text/markdown',
