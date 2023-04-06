@@ -9,13 +9,13 @@ class InternalServiceMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        message = json.dumps({'detail': 'Proxy Authentication Required.'})
+        message = json.dumps({'detail': 'Authentication Internal Service Required.'})
         resp = HttpResponse(
                 message,
-                status=407,
+                status=403,
                 content_type='application/json'
             )
-        auth = request.META.get('HTTP_PROXY_AUTHORIZATION')
+        auth = request.META.get('HTTP_AUTHORIZATION')
         if auth is None:
             return resp
         auth = auth.split(' ')
