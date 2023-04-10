@@ -13,6 +13,6 @@ setup(
                       "djangorestframework==3.14.0",
                       "requests==2.28.2",
                       "django-redis==5.2.0"],
-    python_requires=">=3.8.10",
+    python_requires=">=3.8.9",
     zip_safe=False
 )
