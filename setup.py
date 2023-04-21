@@ -1,5 +1,8 @@
 from setuptools import find_packages, setup
 
+
+requirements = [r for r in open('requirements.txt', 'r').read().splitlines()]
+
 setup(
     name='service_lib',
     version='0.0.4',
@@ -9,10 +12,7 @@ setup(
     author='jeager',
     packages=find_packages(exclude=['tests*']),
     include_package_data=True,
-    install_requires=["django==4.2",
-                      "djangorestframework==3.14.0",
-                      "requests==2.28.2",
-                      "django-redis==5.2.0"],
+    install_requires=requirements,
     python_requires=">=3.8.9",
     zip_safe=False
 )
