@@ -56,7 +56,7 @@ class AuthService(InternalService):
 
 class AccountViewSet(ServiceViewSet):
     service_class = AuthService
-    route = '/path/login'
+    route = '/path/register'
 
     @action(methods=['POST'], detail=False)
     def register(self, request):
